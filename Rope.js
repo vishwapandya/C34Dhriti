@@ -2,23 +2,22 @@ class Rope{
     constructor(bodyA,pointB){ 
         var options={ 
             bodyA:bodyA,
-             pointB:pointB,
-              stiffness:1.2,
-               length: 200
-            } 
-
-
-
-
-this.body =  Matter.Constraint.create(options);
-this.pointB=pointB; 
-World.add(world,this.body); } 
+            pointB:pointB,
+            stiffness:1.2,
+            length: 200
+        } 
+        this.pointB=pointB; 
+    this.rope =  Constraint.create(options);
+    
+    World.add(world,this.rope); 
+} 
 display(){
-     var posA = this.body.bodyA.position; 
-     var posB = this.pointB; //push(); 
+     var posA = this.rope.bodyA.position; 
+     var posB = this.pointB; 
+     push(); 
      // stroke(48, 22, 8); 
      //strokeWeight(3); 
-     line(posA.x,posA.y,posB.x,posB.y); 
-     // pop(); 
+     line(posB.x,posB.y,posA.x,posA.y); 
+     pop(); 
     } }
 
