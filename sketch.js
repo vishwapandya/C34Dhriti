@@ -2,7 +2,7 @@
 const Bodies =Matter.Bodies;
 const World =Matter.World;
 const Engine =Matter.Engine;
-
+const Constraint = Matter.Constraint
 var engine,world;
 
 
@@ -17,7 +17,7 @@ engine=Engine.create();
 //my world is my engine's world
 world=engine.world;
 Engine.run(engine);
-ball1=new Ball(300,200,60);
+ball1=new Ball(300,200,60,60);
 //String1=new Rope(ball1.body,{x:50,y:50});
  rope1 = new Rope(ball1.body,{x:100,y:50});
 ground=new Ground(1500,580,width,20);
